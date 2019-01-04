@@ -6,7 +6,22 @@ The program will determine the actual and ideal hours of sleep for each night of
 
 Finally, it will calculate, in hours, how far you are from your weekly sleep goal. */
 
-const getSleepHours = day => {
+const getSleepHours = {
+  monday = '8';
+  tuesday = 8;
+  wednesday = 8;
+  thursday = 8;
+  friday = 8;
+  saturday = 8;
+  sunday = 8;
+
+}
+
+return sleepHours[day] || console.log('Error')
+
+/* UPGRADE = if you have a lot of possible options just write it like that instead of switch or if/else
+Old version:
+day => {
     switch (day) {
       case 'monday':
         return 8;
@@ -34,7 +49,7 @@ const getSleepHours = day => {
     } 
     
     
-  }
+  } */
   
   const getActualSleepHours = () => 
   getSleepHours('monday') +
@@ -50,7 +65,9 @@ const getSleepHours = day => {
   
   const getIdealSleepHours = () => {
     const idealHours = 12;
-    return idealHours * 7;
+    const daysOfWeek = 7; /* UPGRADED: MAGIC NUMBERS! - always write what any variable means - 
+    never add just string/number etc without name. */
+    return idealHours * daysOfWeek;
   }
   
   const calculateSleepDebt = () => {

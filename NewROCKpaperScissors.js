@@ -17,12 +17,19 @@ Compare the two choices and determine a winner. */
 const getUserChoice = userInput => {
     userInput = 'paper';
       userInput.toLowerCase();
+      if (!(userInput === 'rock' || userInput === 'paper' || userInput === 'scissors')) {
+        console.log('Bad choice');
+        return;
+      } /* GUARD PATTERN => UPGRADE: if you have few reasons what should and what souldn't be input just use it intead 
+       of if/else. Old version:
+
+
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
       return userInput;
     } else {
       console.log('Bad choice');
     }
-  }
+  } */
   
   const getComputerChoice = () => {
     const randomNum = Math.floor(Math.random() * 3);
@@ -42,38 +49,30 @@ const getUserChoice = userInput => {
       return 'Tie';
     } 
     
+
+    
     if (userChoice === 'rock') {
-      if (computerChoice === 'paper') {
-        return 'Computer Won!';
-      } else {
-        return 'User Won!';
-      }
+      computerChoice === 'paper' ? console.log('Computer Won!') : console.log ('USer Won!');
     }
     
     if (userChoice === 'paper') {
-      if (computerChoice === 'scissors') {
-        return 'Computer Won!';
-      } else {
-        return 'User Won!';
-      }
+      computerChoice === 'scissors' ? console.log('Computer Won!') : console.log ('USer Won!');
     } 
     
     if (userChoice === 'scissors') {
-      if (computerChoice === 'rock') {
-        return 'Computer Won!' 
-      } else {
-        return 'User Won!'
-      }
+      computerChoice === 'rock' ? console.log('Computer Won!') : console.log ('USer Won!');
     }
   }
+
+  /* All if above has been changed for TERNARY - ealier there were another if/else inside 
+  but just with one option what was pointless */
   
   
   
   const playGame = () => {
     let userChoice = getUserChoice('scissors');
     let computerChoice = getComputerChoice();
-    console.log('You threw: '+ userChoice);
-    console.log('Computer threw: ' + computerChoice);
+    console.log(`You threw: + ${userChoice} + Computer threw:  + ${computerChoice}`); // UPGRADED : TEMPLATE STRING INSTEAD OF TWO CONSOLES!
     console.log(determineWinner(userChoice, computerChoice));
   }
   
