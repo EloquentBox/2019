@@ -30,7 +30,10 @@ const getTrainingDays = (event) => {
    days = 100;
   } else if (event === 'Pentathlon') {
     days = 200;
+  } else {
+      console.log('Wrong amount of days!');
   }
+
 
   return days;
 };

@@ -22,13 +22,26 @@ Youth registrants run at 12:30 pm (regardless of registration).
 But we didn't plan for runners that are exactly 18! 
 We'll handle that by the end of the project. */
 
-let raceNumber = Math.floor(Math.random() * 1000);
-let alreadyRegistered = true;
+const raceNumber = Math.floor(Math.random() * 1000);
+const alreadyRegistered = true;
 
-let runnerAge = 89;
+const runnerAge = 89; //UPGRADE: USE CONST EVERYWHERE AND IF THERE WILL BE AN ERROR CHANGE IT
 if (runnerAge > 18) {
   raceNumber = raceNumber + 1000
 }
+
+if (runnerAge > 18) {
+  alreadyRegistered 
+    ? console.log(`Your number is ${raceNumber} and you will start at 9:30am`)
+    : console.log(`Your race number is ${raceNumber} and you will start at 11:00am`);
+} else {
+  alreadyRegistered 
+    ? console.log(`Your number is ${raceNumber} and you will start at 12:30am`)
+    : console.log('Please speak with support on registration desk');
+
+    /* UPGRADE: To optimise whole sentence it's much easier to use this way than IF/ELSE
+    HERE IS OLD WAY:
+
 
 if (runnerAge > 18 && alreadyRegistered) {
   console.log('Your number is ' + raceNumber + ' and you will start at 9:30am');
@@ -37,6 +50,6 @@ if (runnerAge > 18 && alreadyRegistered) {
 } else if (runnerAge < 18) {
   console.log('Your race number is ' + raceNumber + ' and you will start at 12:30pm');
 } else {
-  console.log('Please speak with support on registration desk');
+  console.log('Please speak with support on registration desk'); */
 }
 

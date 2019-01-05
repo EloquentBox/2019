@@ -7,7 +7,7 @@ The program will determine the actual and ideal hours of sleep for each night of
 Finally, it will calculate, in hours, how far you are from your weekly sleep goal. */
 
 const getSleepHours = {
-  monday = '8';
+  monday = 8;
   tuesday = 8;
   wednesday = 8;
   thursday = 8;
@@ -51,10 +51,15 @@ day => {
     
   } */
   
-  const getActualSleepHours = () => 
+  const getActualSleepHours = [
   getSleepHours('monday') +
-        getSleepHours('tuesday') + getSleepHours('wednesday') + getSleepHours('thursday') +
-        getSleepHours('friday') + getSleepHours('saturday') + getSleepHours('sunday');
+        getSleepHours('tuesday'), getSleepHours('wednesday'), getSleepHours('thursday'),
+        getSleepHours('friday'), getSleepHours('saturday'), getSleepHours('sunday')];
+    let totalHoursOfSleep = 0; // Sum up all hours
+    for (i = 0; i < getActualSleepHours.length; i++)
+    {
+      totalHoursOfSleep += getActualSleepHours[i]
+    }
   
   
   
@@ -71,14 +76,14 @@ day => {
   }
   
   const calculateSleepDebt = () => {
-      const actualSleepHours = getActualSleepHours();
+      const actualSleepHours = totalHoursOfSleep();
       const idealSleepHours = getIdealSleepHours();
       if (actualSleepHours === idealSleepHours) {
       console.log('You have perfect amount of sleep');
     } else if (actualSleepHours > idealSleepHours) {
-      console.log('You sleep ' + (actualSleepHours - idealSleepHours) + ' hours too much!');
+      console.log('You sleep ' + (totalHoursOfSleep - idealSleepHours) + ' hours too much!');
     } else {
-      console.log('You should sleep ' + (idealSleepHours - actualSleepHours) + ' hours more!');
+      console.log('You should sleep ' + (idealSleepHours - totalHoursOfSleep) + ' hours more!');
     }
   
   

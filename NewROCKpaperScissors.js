@@ -70,8 +70,8 @@ const getUserChoice = userInput => {
   
   
   const playGame = () => {
-    let userChoice = getUserChoice('scissors');
-    let computerChoice = getComputerChoice();
+    const userChoice = getUserChoice('scissors');
+    const computerChoice = getComputerChoice();
     console.log(`You threw: + ${userChoice} + Computer threw:  + ${computerChoice}`); // UPGRADED : TEMPLATE STRING INSTEAD OF TWO CONSOLES!
     console.log(determineWinner(userChoice, computerChoice));
   }
