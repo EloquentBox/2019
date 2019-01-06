@@ -7,7 +7,7 @@ var animals = [
     {name: 'Harold', species: 'fish'}
 ];
 
-var dogs = animals.filter(function(animal) {
+const dogs = animals.filter(function(animal) {
     return animal.species === 'dog';
 });
 
@@ -23,7 +23,7 @@ It will return new array (filtered) "dogs"
 
 Normal LOOP:
 
-var dogs = [];
+const dogs = [];
 for (let i = 0, length = animals.length; i < length ;i++) {
     if(animals[i].species === 'dog') {
     dogs.push(animals[i]);
