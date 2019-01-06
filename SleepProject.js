@@ -61,13 +61,6 @@ day => {
       totalHoursOfSleep += getActualSleepHours[i]
     }
   
-  
-  
-   
-  
-  
-  
-  
   const getIdealSleepHours = () => {
     const idealHours = 12;
     const daysOfWeek = 7; /* UPGRADED: MAGIC NUMBERS! - always write what any variable means - 
@@ -78,7 +71,7 @@ day => {
   const calculateSleepDebt = () => {
       const actualSleepHours = totalHoursOfSleep();
       const idealSleepHours = getIdealSleepHours();
-      if (actualSleepHours === idealSleepHours) {
+      if (totalHoursOfSleep === idealSleepHours) {
       console.log('You have perfect amount of sleep');
     } else if (actualSleepHours > idealSleepHours) {
       console.log('You sleep ' + (totalHoursOfSleep - idealSleepHours) + ' hours too much!');

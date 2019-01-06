@@ -11,7 +11,7 @@ Days more maintainable and less error-prone by fixing variable scopes. */
 
 const random = Math.floor(Math.random() * 3);
 const name = 'Nala'; 
-const getRandEvent = () => {
+const getRandEvent = random => {
   if (random === 0) {
     return 'Marathon';
   } else if (random === 1) {
@@ -19,6 +19,7 @@ const getRandEvent = () => {
   } else if (random === 2) {
     return 'Pentathlon';
   }
+}
 };
 
 
